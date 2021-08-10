@@ -8,6 +8,7 @@ cd style-gsc-01
 docker run -it --rm -v ${PWD}:/data unvt/nanban  
 cd /data  
 vi hocon/source.conf   (edit source)
+vi hocon/_root.conf (edit root)
 rake  
 ```  
 
