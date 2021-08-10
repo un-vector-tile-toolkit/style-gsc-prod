@@ -1,0 +1,277 @@
+{
+  "center": [
+    0,
+    0
+  ],
+  "glyphs": "https://dev-unvt.dfs.un.org/font/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "paint": {
+        "background-color": "#D6EBF5"
+      },
+      "type": "background"
+    },
+    {
+      "id": "pg-landmass",
+      "maxzoom": 18,
+      "minzoom": 0,
+      "paint": {
+        "fill-color": "#FAF9F6"
+      },
+      "source": "v",
+      "source-layer": "landmass",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "gridcode"
+        ],
+        [
+          20,
+          30,
+          80
+        ],
+        true,
+        false
+      ],
+      "id": "pg-landcover",
+      "maxzoom": 18,
+      "minzoom": 3,
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "gridcode"
+          ],
+          20,
+          "#DAEDD0",
+          30,
+          "#ECF3DD",
+          "#F6EFEF"
+        ]
+      },
+      "source": "v",
+      "source-layer": "landcover",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "all",
+        [
+          "!=",
+          "fclass",
+          "pier"
+        ]
+      ],
+      "id": "pg-land-trans-area",
+      "maxzoom": 18,
+      "paint": {
+        "fill-color": "#E9DCE7"
+      },
+      "source": "v",
+      "source-layer": "trans_area",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "fclass"
+        ],
+        [
+          "cemetery",
+          "commercial",
+          "industrial",
+          "residential"
+        ],
+        true,
+        false
+      ],
+      "id": "pg-land-urban",
+      "maxzoom": 18,
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "fclass"
+          ],
+          "cemetery",
+          "#BDDFC9",
+          "commercial",
+          "#ECE0CF",
+          "industrial",
+          "#E1DEEC",
+          "residential",
+          "#EDE6E6",
+          [
+            "rgb",
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "source": "v",
+      "source-layer": "lu_urban",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "z_order"
+        ],
+        [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        true,
+        false
+      ],
+      "id": "pg-land-nature-m",
+      "maxzoom": 18,
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "z_order"
+          ],
+          [
+            13,
+            14,
+            17
+          ],
+          "#F2F2DC",
+          15,
+          "#E2EBCF",
+          16,
+          "#F2F2E3",
+          [
+            18,
+            19
+          ],
+          "#CFE6C3",
+          [
+            "rgb",
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "source": "v",
+      "source-layer": "nature-m",
+      "type": "fill"
+    },
+    {
+      "filter": [
+        "match",
+        [
+          "get",
+          "z_order"
+        ],
+        [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        true,
+        false
+      ],
+      "id": "pg-land-nature-l",
+      "maxzoom": 18,
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "z_order"
+          ],
+          2,
+          "#E5DFD1",
+          9,
+          "#ECE7DE",
+          [
+            4,
+            16
+          ],
+          "#F2F2E3",
+          [
+            13,
+            14
+          ],
+          "#F2F2DC",
+          [
+            5,
+            6,
+            15
+          ],
+          "#E2EBCF",
+          [
+            7,
+            12
+          ],
+          "#E1EDC9",
+          [
+            1,
+            3,
+            8,
+            10,
+            11
+          ],
+          "#BAE3BA",
+          [
+            "rgb",
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "source": "v",
+      "source-layer": "nature-l",
+      "type": "fill"
+    }
+  ],
+  "site_root": "https://dev-unvt.dfs.un.org",
+  "sources": {
+    "v": {
+      "attribution": "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>, and <a href='https://www.un.org/geospatial/'>UN Geospatial</a>",
+      "maxzoom": 15,
+      "minzoom": 0,
+      "tiles": [
+        "https://xxxxxx/{z}/{x}/{y}.pbf"
+      ],
+      "type": "vector"
+    }
+  },
+  "sprite": "https://dev-unvt.dfs.un.org/sprite_un/sprite_S",
+  "version": 8,
+  "zoom": 4
+}
